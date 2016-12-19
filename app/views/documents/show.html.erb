@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @document.name %>
+</p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @document.title %>
+</p>
+
+<p>
+  <strong>Modified by:</strong>
+  <%= @document.modified_by %>
+</p>
+
+<p>
+  <strong>Last modified:</strong>
+  <%= @document.last_modified %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @document.status %>
+</p>
+
+<p>
+  <strong>Country:</strong>
+  <%= @document.country %>
+</p>
+
+<p>
+  <strong>Stared:</strong>
+  <%= @document.stared %>
+</p>
+
+<%= link_to 'Edit', edit_document_path(@document) %> |
+<%= link_to 'Back', documents_path %>
