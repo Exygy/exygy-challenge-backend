@@ -9,8 +9,8 @@ class UsersController < ApplicationController
   def login
     users = User.where(email: email_param, password: password_param)
     if users.count > 0
-      @user = users.json
-      render json: users.first
+      @user = users
+      render json: @user
     else
       render json: { error: "Wrong credentials" }, status: :unprocessable_entity
     end
