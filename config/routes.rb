@@ -15,4 +15,5 @@ Rails.application.routes.draw do
     end
   end
   resources :documents, only: [:index, :show]
+  root 'documents#index'
 end
