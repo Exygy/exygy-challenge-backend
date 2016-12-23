@@ -79,10 +79,6 @@ class UsersController < ApplicationController
       params.require(:user).permit(:first_name, :last_name)
     end
 
-    def api_key_param
-      params.require(:api_key)
-    end
-
     def email_param
       params.require(:email)
     end

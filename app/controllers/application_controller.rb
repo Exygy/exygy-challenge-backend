@@ -6,4 +6,10 @@ class ApplicationController < ActionController::API
     render json: {error: "Wrong credentials"}, status: 403 unless users.count > 0
     @user = users.first
   end
+
+  private
+
+  def api_key_param
+    params.require(:api_key)
+  end
 end
