@@ -1,6 +1,18 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
 
+  def edit
+  end
+
+  def login
+    @user = User.find(email: login_params[:email], password: login_params[:password])
+    if @user
+      render @user.json
+    else
+      render { error: "Wrong credentials" }, status: :unprocessable_entity
+    end
+  end
+
   # GET /users
   # GET /users.json
   def index
@@ -70,5 +82,9 @@ class UsersController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
       params.require(:user).permit(:first_name, :last_name, :email)
+    end
+
+    def login_params
+      params.require(:email, :password)
     end
 end
