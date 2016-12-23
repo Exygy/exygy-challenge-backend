@@ -85,6 +85,9 @@ class UsersController < ApplicationController
     end
 
     def login_params
+
+      logger.info params.inspect
+
       params.require(:email).require(:password)
     end
 end
