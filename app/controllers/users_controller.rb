@@ -1,15 +1,16 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: :edit
+  before_action :set_current_user, only: :edit
 
   def edit
-      @user = @user.update(user_params)
-      render json: @user
+    @current_user = @current_user.update(user_params)
+    render json: @current_user
   end
 
   def login
-    @users = User.where(email: email_param, password: password_param)
-    if @users.first
-      render json: @users.first
+    users = User.where(email: email_param, password: password_param)
+    if users.count > 0
+      @user = users.json
+      render json: users.first
     else
       render json: { error: "Wrong credentials" }, status: :unprocessable_entity
     end
@@ -18,7 +19,7 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
-    @users = User.all
+    users = User.all
   end
 
   # GET /users/1
@@ -72,18 +73,10 @@ class UsersController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_user
-      @users = User.where(api_key: api_key_param)
-      unless @users.count > 0
-        render json: {error: "Wrong credentials"}, status: 403
-      end
-      @user = @users.first
-    end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:first_name, :last_name, :email)
+      params.require(:user).permit(:first_name, :last_name)
     end
 
     def api_key_param
