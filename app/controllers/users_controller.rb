@@ -78,7 +78,11 @@ class UsersController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_user
-      @user = User.find(api_key: api_key_param)
+      @users = User.where(api_key: api_key_param)
+      unless @users.count > 0
+        render json: {error: "Wrong credentials"}, status: 403
+      end
+      @user = @users.first
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
