@@ -85,6 +85,6 @@ class UsersController < ApplicationController
     end
 
     def login_params
-      params.require(:email, :password)
+      params.require(:email).require(:password)
     end
 end
