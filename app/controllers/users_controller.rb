@@ -9,7 +9,7 @@ class UsersController < ApplicationController
     if @user
       render @user.json
     else
-      render { error: "Wrong credentials" }, status: :unprocessable_entity
+      render json: { error: "Wrong credentials" }, status: :unprocessable_entity
     end
   end
 
