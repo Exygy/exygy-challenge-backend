@@ -85,7 +85,7 @@ class UsersController < ApplicationController
     end
 
     def email_param
-      params.require(:email).require(:password)
+      params.require(:email)
     end
 
     def password_param
