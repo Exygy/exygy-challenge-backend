@@ -5,7 +5,7 @@ class UsersController < ApplicationController
   end
 
   def login
-    @user = User.find(email: login_params[:email], password: login_params[:password])
+    @user = User.find(email: email_param, password: password_param)
     if @user
       render @user.json
     else
@@ -84,10 +84,11 @@ class UsersController < ApplicationController
       params.require(:user).permit(:first_name, :last_name, :email)
     end
 
-    def login_params
-
-      logger.info params.inspect
-
+    def email_param
       params.require(:email).require(:password)
+    end
+
+    def password_param
+      params.require(:password)
     end
 end
