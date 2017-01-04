@@ -15,4 +15,5 @@
 #
 
 class Document < ApplicationRecord
+  enum document_type: [ :word, :excel, :pdf ]
 end
