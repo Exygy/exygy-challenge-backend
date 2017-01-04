@@ -14,7 +14,7 @@
     modified_by: "Sophia Bishop",
     document_type: :excel,
     status: "final",
-    country: "Germany"
+    country: "Germany",
     stared: true,
   },
   {
@@ -23,7 +23,7 @@
     modified_by: "Lura Brown",
     document_type: :word,
     status: "final",
-    country: "United States"
+    country: "United States",
     stared: false,
   },
   {
@@ -32,7 +32,7 @@
     modified_by: "Steven Aguilar",
     document_type: :pdf,
     status: "final",
-    country: "Germany"
+    country: "Germany",
     stared: false,
   },
   {
@@ -41,7 +41,7 @@
     modified_by: "Jimmy Townsend",
     document_type: :word,
     status: "final",
-    country: "Germany, United States"
+    country: "Germany, United States",
     stared: true,
   },
   {
@@ -50,7 +50,7 @@
     modified_by: "Sophia Bishop",
     document_type: :excel,
     status: "final",
-    country: "Germany"
+    country: "Germany",
     stared: false,
   },
   {
@@ -59,7 +59,7 @@
     modified_by: "Lura Brown",
     document_type: :excel,
     status: "final",
-    country: "United States"
+    country: "United States",
     stared: false,
   },
   {
@@ -68,7 +68,7 @@
     modified_by: "Steven Aguilar",
     document_type: :word,
     status: "final",
-    country: "Germany"
+    country: "Germany",
     stared: false,
   },
   {
@@ -77,7 +77,7 @@
     modified_by: "Jimmy Townsend",
     document_type: :excel,
     status: "final",
-    country: "Germany, United States"
+    country: "Germany, United States",
     stared: true,
   },
   {
@@ -86,7 +86,7 @@
     modified_by: "Sophia Bishop",
     document_type: :word,
     status: "final",
-    country: "Germany"
+    country: "Germany",
     stared: false,
   }
 ].each do |document|
