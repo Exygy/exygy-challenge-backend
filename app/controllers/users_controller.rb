@@ -7,6 +7,11 @@ class UsersController < ApplicationController
   end
 
   def login
+
+    p '****'
+    p params.inspect
+    p '****'
+
     users = User.where(email: email_param, password: password_param)
     if users.count > 0
       @user = users
