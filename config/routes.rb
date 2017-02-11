@@ -10,7 +10,7 @@
 Rails.application.routes.draw do
   resources :users, only: [] do
     collection do
-      post 'login'
+      match 'login', to: 'users#login', via: [:post, :options]
       post 'edit'
     end
   end
